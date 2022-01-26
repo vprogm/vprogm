@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Станции</h1>
+
+<div id="railway_stations">
+  <% @railway_stations.each do |railway_station| %>
+    <%= render railway_station %>
+    <p>
+      <%= link_to " Показать", [:admin, railway_station] %>
+      <%= link_to " Изменить", edit_admin_railway_station_path(railway_station) %>
+      <%= button_to " Удалить", [:admin, railway_station], method: :delete, data: { confirm: "Вы уверены?"} %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "Создать", new_admin_railway_station_path %>

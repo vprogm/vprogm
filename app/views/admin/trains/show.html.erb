@@ -1,0 +1,30 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @train %>
+
+  <p>
+    <strong>На станции:</strong>
+    <% if @train.current_stations.present? %>
+      <%= @train.current_stations.title %>
+    <% else %>
+      Не указано
+    <% end %>
+  </p>
+
+  <p>
+    <strong>Вагоны</strong>
+    <ul>
+      <% @train.carriages.each do |car| %>
+        <li><%= link_to "Вагон №#{car.number}", car %></li>
+      <% end %>  
+    </ul>
+  </p>
+
+  <p>
+    <%= link_to "Добавить вагон", new_train_carriage_path(@train) %> 
+  </p>
+<div>
+  <%= link_to "Изменить", edit_train_path(@train) %> |
+  <%= link_to "Вернуться", trains_path %>
+  <%= button_to "Удалить", @train, method: :delete %>
+</div>

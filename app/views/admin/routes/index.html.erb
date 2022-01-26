@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Маршруты</h1>
+
+<div id="routes">
+  <% @routes.each do |route| %>
+    <%= render route %>
+    <p>
+      <%= link_to " Показать", route %>
+      <%= link_to " Изменить", edit_route_path(route) %>
+      <%= link_to " Удалить", route, method: :delete, data: { confirm: "Вы уверены?"} %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "Создать", new_route_path %>

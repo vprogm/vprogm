@@ -1,0 +1,5 @@
+class CoupeCarriage < Carriage
+
+
+
+end
