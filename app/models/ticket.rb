@@ -6,7 +6,7 @@ class Ticket < ApplicationRecord
 	after_create :send_notification
 
 	def route_name
-		"#{start_station.title} - #{end_station,title}"
+		"#{start_station.title} - #{end_station.title}"
 	end
 
 	private
