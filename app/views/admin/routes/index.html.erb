@@ -1,4 +1,4 @@
-<p style="color: green"><%= notice %></p>
+  <p style="color: green"><%= notice %></p>
 
 <h1>Маршруты</h1>
 
@@ -6,11 +6,11 @@
   <% @routes.each do |route| %>
     <%= render route %>
     <p>
-      <%= link_to " Показать", route %>
-      <%= link_to " Изменить", edit_route_path(route) %>
-      <%= link_to " Удалить", route, method: :delete, data: { confirm: "Вы уверены?"} %>
+      <%= link_to " Показать", [:admin, route] %>
+      <%= link_to " Изменить", edit_admin_route_path(route) %>
+      <%= button_to " Удалить", [:admin, route], method: :delete, data: { confirm: "Вы уверены?"} %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "Создать", new_route_path %>
+<%= link_to "Создать", new_admin_route_path %>

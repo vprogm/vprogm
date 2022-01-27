@@ -1,9 +1,11 @@
 <h1>Новая станция</h1>
 
-<%= render "form", railway_station: @railway_station %>
+<%= form_with(model: @railway_station, url: admin_railway_stations_path) do |form| %>
+  <%= render "form", form: form %>
+<% end %>
 
 <br>
 
 <div>
-  <%= link_to "Вернуться", railway_stations_path %>
+  <%= link_to "Вернуться", admin_railway_stations_path %>
 </div>

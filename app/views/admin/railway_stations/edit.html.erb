@@ -1,10 +1,12 @@
-<h1>Editing railway station</h1>
+<h1>Изменить станцию</h1>
 
-<%= render "form", railway_station: @railway_station %>
+<%= form_with(model: @railway_station, url: admin_railway_station_path, method: :patch) do |form| %>
+  <%= render "form", form: form %>
+<% end %>
 
 <br>
 
 <div>
-  <%= link_to "Показать", @railway_station %> |
-  <%= link_to "Вернуться", railway_stations_path %>
+  <%= link_to "Изменить", admin_railway_station_path(@railway_station) %> 
+  <%= link_to "Вернуться", admin_railway_stations_path %>
 </div>

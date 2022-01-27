@@ -51,7 +51,7 @@
             <% if user_signed_in? %>
               <li><%= button_to "EXIT", destroy_user_session_path, method: :delete %></li>
               <% if current_user.admin? %>
-                <li><%= link_to "ADMINka", admin_railway_stations_path  %></li>
+                <li><%= link_to "ADMINka", welcome_index_path  %></li>
               <% end %>
             <% else %>
             <li><%= link_to "VHOD", new_user_session_path %></li>

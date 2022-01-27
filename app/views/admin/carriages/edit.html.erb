@@ -1,0 +1,11 @@
+<h1>Изменить wagon</h1>
+
+<%= form_with(model: @carriage, url: admin_carriage_path, method: :patch) do |f| %>
+  <%= render "form", f: f %>
+<% end %>
+
+<br>
+
+<div>
+  <%= link_to "Назад", admin_train_path(@carriage.train) %>  
+</div>

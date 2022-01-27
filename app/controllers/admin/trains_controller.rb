@@ -16,9 +16,9 @@ class Admin::TrainsController < Admin::BaseController
   def create
     @train = Train.new(train_params)
     if @train.save
-    redirect_to @train
+      redirect_to admin_train_path(@train)
     else
-    render :new
+      render :new
     end
   end
 
@@ -27,7 +27,7 @@ class Admin::TrainsController < Admin::BaseController
 
   def update
     if @train.update(train_params)
-      redirect_to @train
+      redirect_to admin_train_path(@train)
     else 
       render :edit
     end
@@ -35,7 +35,7 @@ class Admin::TrainsController < Admin::BaseController
 
   def destroy
     @train.destroy
-    redirect_to trains_path
+    redirect_to admin_trains_path
   end
 
   private
@@ -45,6 +45,6 @@ class Admin::TrainsController < Admin::BaseController
   end
 
   def train_params
-    params.require(:train).permit(:number, :current_stations_id)
+    params.require(:train).permit(:number, :current_station_id)
   end 
 end 

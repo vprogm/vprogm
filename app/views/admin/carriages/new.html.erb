@@ -1,6 +1,8 @@
 <h1> Новый вагон </h1>
+<%= render "common/errors", model: @carriage %>
 
-<%= form_for [@train, @carriage] do |f| %>
+<%= form_with(model: @carriage, url: admin_train_carriages_path) do |f| %>
+
 	<div class="field">
 		<%= f.label :number, "Номер" %><br>
 		<%= f.text_field :number %>

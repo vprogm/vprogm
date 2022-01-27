@@ -21,7 +21,7 @@
         <tr>
           <td><%= station.title %></td>
           <td>
-            <%= form_tag update_position_railway_station_path(station), method: :patch do %>
+            <%= form_tag update_position_admin_railway_station_path(station), method: :patch do %>
               <%= number_field_tag :position, station.position_in(@route) %>
               <%= hidden_field_tag :route_id, @route.id %>
               <%= submit_tag "Изменить" %>
@@ -36,8 +36,8 @@
 
 
 <div>
-  <%= link_to "Изменить", edit_route_path(@route) %> |
-  <%= link_to "Вернуться", routes_path %>
+  <%= link_to "Изменить", edit_admin_route_path(@route) %> |
+  <%= link_to "Вернуться", admin_routes_path %>
 
-  <%= button_to "Удалить", @route, method: :delete %>
+  <%= button_to "Удалить", admin_route_path(@route), method: :delete %>
 </div>

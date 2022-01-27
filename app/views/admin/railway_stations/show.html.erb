@@ -16,8 +16,8 @@
 
 <div>
 
-  <%= link_to "Изменить", edit_railway_station_path(@railway_station) %> |
-  <%= link_to "Вернуться", railway_stations_path %>
+  <%= link_to "Изменить", edit_admin_railway_station_path(@railway_station) %> |
+  <%= link_to "Вернуться", admin_railway_stations_path %>
 
-  <%= button_to "Удалить", @railway_station, method: :delete %>
+  <%= button_to "Удалить", admin_railway_station_path(@railway_station), method: :delete %>
 </div>

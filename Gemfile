@@ -5,7 +5,7 @@ ruby "3.0.2"
 
 gem "rails", "~> 7.0.1"
 gem "sprockets-rails"
-gem "sqlite3", "~> 1.4"
+gem "pg"
 gem "puma", "~> 5.0"
 gem "importmap-rails"
 gem "turbo-rails"
@@ -15,6 +15,8 @@ gem "bootsnap", require: false
 gem "devise"
 gem "therubyracer"
 gem "twitter-bootstrap-rails"
+
+gem 'rails_12factor'
 
 group :development, :test do
   gem "debug"

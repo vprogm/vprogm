@@ -6,11 +6,11 @@
   <% @trains.each do |train| %>
     <%= render train %>
     <p>
-      <%= link_to " Показать", train %>
-      <%= link_to " Изменить", edit_train_path(train) %>
-      <%= link_to " Удалить", train, method: :delete, data: { confirm: "Вы уверены?"} %>
+      <%= link_to " Показать", [:admin, train] %>
+      <%= link_to " Изменить", edit_admin_train_path(train) %>
+      <%= button_to " Удалить", [:admin, train], method: :delete, data: { confirm: "Вы уверены?"} %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "Создать", new_train_path %>
+<%= link_to "Создать", new_admin_train_path %>

@@ -10,7 +10,10 @@ class Route < ApplicationRecord
   private
 
   def set_name
+    if railway_stations.size > 0
   	self.name = "#{railway_stations.first.title} - #{railway_stations.last.title}"
+    else
+    end
   end
 
   def stations_count

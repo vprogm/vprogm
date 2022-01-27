@@ -1,25 +1,9 @@
 <h1>Изменить маршрут</h1>
 
-<%= form_with(model: @route) do |form| %>
-  <% if @route.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(@route.errors.count, "error") %> prohibited this route from being saved:</h2>
+<%= form_with(model: @route, url: admin_route_path, method: :patch) do |form| %>
 
-      <ul>
-        <% @route.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-          
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
+  <%= render "common/errors", model: @route %>
   <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
-
-    <div>
     <%= form.label :railway_station_ids,  "Текущая станция" %>
     <%= form.collection_select :railway_station_ids, RailwayStation.all, :id, :title, {}, { multiple: true} %>
   </div>
@@ -29,10 +13,9 @@
   </div>
 <% end %>
 
-
 <br>
 
 <div>
-  <%= link_to "Вернуться", routes_path %>
+  <%= link_to "Вернуться", admin_routes_path %>
 </div>
  
